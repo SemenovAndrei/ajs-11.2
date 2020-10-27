@@ -39,25 +39,8 @@ class Team {
     return Array.from(this.members);
   }
 
-  [Symbol.iterator]() {
-    const team = this.toArray();
-    let current = 0;
-
-    return { // метод должен вернуть объект с методом next()
-      next() {
-        if (current < team.length) {
-          const value = team[current];
-          current += 1;
-          return {
-            done: false,
-            value,
-          };
-        }
-        return {
-          done: true,
-        };
-      },
-    };
+  * [Symbol.iterator]() {
+    yield* this.toArray();
   }
 }
 

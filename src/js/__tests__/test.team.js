@@ -62,8 +62,8 @@ test('однократное добавление списка персонаж�
 });
 
 
-describe('test iterator', () => {
-  test('team{Symbol.iterator]', () => {
+describe('test generator', () => {
+  test('* {Symbol.iterator]', () => {
     const team = new Team();
     team.addAll(charactersList);
     const expected = [];
