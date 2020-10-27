@@ -39,6 +39,10 @@ class Team {
     return Array.from(this.members);
   }
 
+  /**
+  * Позволяет провести итерацию по this.members
+  * через for ... of team
+  */
   * [Symbol.iterator]() {
     yield* this.toArray();
   }
